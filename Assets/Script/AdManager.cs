@@ -5,10 +5,21 @@ using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour
 {
+
+    public static AdManager instance;
+
+    public void Start()
+    {
+        instance = this;
+    }
+
+
     public void Awake()
     {
         Advertisement.Initialize("4859665", true);
     }
+
+
     public void ShowAD()
     {
         if (Advertisement.IsReady())
